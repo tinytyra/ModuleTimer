@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0k2g1rqgdd71"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_gsqa8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fsuv4"]
+font_size = 80
+
+[node name="Timer" type="Timer"]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+script = ExtResource("1_gsqa8")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -68.5
+offset_right = 122.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "words"
+label_settings = SubResource("LabelSettings_fsuv4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
