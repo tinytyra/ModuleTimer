@@ -1,7 +1,7 @@
 extends Timer
 
 func _ready() -> void:
-	start(3)
+	start(5)
 	
 func _physics_process(_delta: float) -> void:
 	$Label.set_text(str(round(time_left)))
