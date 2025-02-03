@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpikipbm8bkhg"]
+[gd_scene load_steps=3 format=3 uid="uid://cpikipbm8bkhg"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_6ee4w"]
+[ext_resource type="Script" path="res://scripts/duration_spinbox.gd" id="2_v0sum"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,6 +30,7 @@ update_on_text_changed = true
 prefix = "Timer:"
 suffix = "seconds"
 custom_arrow_step = 1.0
+script = ExtResource("2_v0sum")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
