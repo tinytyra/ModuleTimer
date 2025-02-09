@@ -1,3 +1,11 @@
+@tool
+extends EditorScript
+
+# for debug
+func _run():
+	convert_duration()
+	convert_input()
+
 # convert duration in seconds to HH:MM:SS
 var duration = 6129
 	
