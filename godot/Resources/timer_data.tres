@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TimerDat" load_steps=2 format=3 uid="uid://b5hdgucl16qfu"]
+
+[ext_resource type="Script" path="res://Scripts/timer_block_data.gd" id="1_f25ch"]
+
+[resource]
+script = ExtResource("1_f25ch")
+name = "New Timer Block"
+dur_sec = 0
+dur_stamp = Array[int]([0, 1, 2])
+auto_cont = false

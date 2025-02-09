@@ -14,6 +14,16 @@ config/name="ModuleTimer"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Resources/": "yellow",
+"res://Scenes/": "teal",
+"res://Scripts/": "pink",
+"res://old_scenes/": "gray",
+"res://old_scripts/": "gray"
+}
+
 [physics]
 
 common/physics_ticks_per_second=10
