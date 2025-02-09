@@ -26,6 +26,7 @@ window/ios/hide_status_bar=false
 [file_customization]
 
 folder_colors={
+"res://Assets/": "purple",
 "res://Resources/": "yellow",
 "res://Scenes/": "teal",
 "res://Scripts/": "pink",
