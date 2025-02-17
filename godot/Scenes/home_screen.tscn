@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://8y0esc1mml5l"]
+[gd_scene load_steps=4 format=3 uid="uid://8y0esc1mml5l"]
 
-[ext_resource type="Theme" uid="uid://hg1k5lvhhsv2" path="res://Resources/timer_theme.tres" id="1_hls30"]
-[ext_resource type="LabelSettings" uid="uid://bs0r5qx438m5g" path="res://Resources/timer_name_labelsettings.tres" id="2_inw4u"]
+[ext_resource type="Theme" uid="uid://hg1k5lvhhsv2" path="res://Resources/UI_light.tres" id="1_hls30"]
+[ext_resource type="FontFile" uid="uid://yxyb3w3xlhkb" path="res://Assets/Fonts/Nunito-SemiBold.ttf" id="2_n0lw8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_phth8"]
+line_spacing = 2.0
+font = ExtResource("2_n0lw8")
+font_size = 18
+font_color = Color(0.0353462, 0.0353462, 0.0353462, 1)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,49 +24,55 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.816583, 0.791076, 0.75966, 1)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Timers" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Timers"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_hls30")
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 60
 
-[node name="LoopsList" type="ScrollContainer" parent="CanvasLayer2/MarginContainer"]
+[node name="LoopsListScroll" type="ScrollContainer" parent="Timers/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("1_hls30")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/MarginContainer/LoopsList"]
+[node name="LoopsListVertical" type="VBoxContainer" parent="Timers/MarginContainer/LoopsListScroll"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_hls30")
 
-[node name="LoopBar" type="ScrollContainer" parent="CanvasLayer2/MarginContainer/LoopsList/VBoxContainer"]
+[node name="LoopBarScroll" type="ScrollContainer" parent="Timers/MarginContainer/LoopsListScroll/LoopsListVertical"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("1_hls30")
 
-[node name="HorizontalBox" type="HBoxContainer" parent="CanvasLayer2/MarginContainer/LoopsList/VBoxContainer/LoopBar"]
+[node name="LoopBarHorizontal" type="HBoxContainer" parent="Timers/MarginContainer/LoopsListScroll/LoopsListVertical/LoopBarScroll"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource("1_hls30")
 
-[node name="TimerBlock" type="PanelContainer" parent="CanvasLayer2/MarginContainer/LoopsList/VBoxContainer/LoopBar/HorizontalBox"]
+[node name="TimerBlock" type="PanelContainer" parent="Timers/MarginContainer/LoopsListScroll/LoopsListVertical/LoopBarScroll/LoopBarHorizontal"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_hls30")
 
-[node name="Title" type="Label" parent="CanvasLayer2/MarginContainer/LoopsList/VBoxContainer/LoopBar/HorizontalBox/TimerBlock"]
+[node name="Title" type="Label" parent="Timers/MarginContainer/LoopsListScroll/LoopsListVertical/LoopBarScroll/LoopBarHorizontal/TimerBlock"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("1_hls30")
 text = "label label"
-label_settings = ExtResource("2_inw4u")
+label_settings = SubResource("LabelSettings_phth8")
 horizontal_alignment = 1
 vertical_alignment = 1
