@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1iiotgthd7mi"]
+
+[ext_resource type="Script" uid="uid://tdh4br2jrjby" path="res://loop/loop_func.gd" id="1_ns1ih"]
+[ext_resource type="Resource" uid="uid://xpbapmvgvirj" path="res://resources.tres/Loop_Test.tres" id="2_ut5n6"]
+
+[node name="Loop" type="Node"]
+script = ExtResource("1_ns1ih")
+current_loop = ExtResource("2_ut5n6")

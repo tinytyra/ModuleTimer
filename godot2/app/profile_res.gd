@@ -1,7 +1,4 @@
 extends Resource
-class_name Profile
-# Custom resource class for profile data .tres files
-# Used by: main.gd
-# Uses: loop_res.gd
+class_name Profile # Used by: main.gd
 
-@export var has_loops : Array[Resource]
+@export var has_loops : Array[Resource] # Uses: loop_res.gd

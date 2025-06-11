@@ -1,5 +1,5 @@
 extends Resource
-class_name Block
+class_name Block # Used by: loop_res.gd
 
 @export var hh : int
 @export var mm : int
