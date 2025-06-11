@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Block" load_steps=2 format=3 uid="uid://dfxpqe7ua0tma"]
+
+[ext_resource type="Script" uid="uid://xwyq3y5djy4m" path="res://block/block_res.gd" id="1_48202"]
+
+[resource]
+script = ExtResource("1_48202")
+hh = 0
+mm = 0
+ss = 0
+auto_proceed = false
+user_color = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://xwyq3y5djy4m"
