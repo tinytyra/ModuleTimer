@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5tbo4akrdw37"]
+[gd_scene load_steps=8 format=3 uid="uid://c5tbo4akrdw37"]
 
 [ext_resource type="Script" uid="uid://lcmclsjkee1e" path="res://block/block_func.gd" id="1_p2cip"]
 [ext_resource type="Resource" uid="uid://dfxpqe7ua0tma" path="res://resources.tres/Block_Test.tres" id="2_07jjg"]
 [ext_resource type="StyleBox" uid="uid://cka1d13ti0cah" path="res://resources.tres/StyleBoxFlat_Block.tres" id="3_07jjg"]
+[ext_resource type="Theme" uid="uid://dkx8la5itsdg3" path="res://resources.tres/Theme_Light.tres" id="3_sj7r8"]
+[ext_resource type="FontFile" uid="uid://bcfglvhtkeqwo" path="res://addons/nunito/Nunito-Bold.ttf" id="5_7vp4c"]
+[ext_resource type="LabelSettings" uid="uid://cdgjcndjihuk6" path="res://resources.tres/LabelSettings_Light_Block_Countdown.tres" id="5_o2knv"]
+[ext_resource type="PackedScene" uid="uid://cxjdm5aio75xf" path="res://block/edit_duration.tscn" id="7_mqn8r"]
 
 [node name="Block" type="Node"]
 script = ExtResource("1_p2cip")
@@ -22,6 +26,7 @@ offset_right = 60.0
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_sj7r8")
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1
@@ -30,45 +35,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_sj7r8")
 theme_override_styles/panel = ExtResource("3_07jjg")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -40.0
-offset_right = 133.0
 grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_7vp4c")
+text = "hh : mm : ss"
+label_settings = ExtResource("5_o2knv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="Control/HBoxContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-max_value = 60.0
-rounded = true
-alignment = 1
-custom_arrow_step = 5.0
-select_all_on_focus = true
-
-[node name="SpinBox2" type="SpinBox" parent="Control/HBoxContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-max_value = 60.0
-rounded = true
-alignment = 1
-custom_arrow_step = 5.0
-select_all_on_focus = true
-
-[node name="SpinBox3" type="SpinBox" parent="Control/HBoxContainer"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-max_value = 60.0
-rounded = true
-alignment = 1
-custom_arrow_step = 5.0
-select_all_on_focus = true
+[node name="EditDuration" parent="Control" instance=ExtResource("7_mqn8r")]
+layout_mode = 1

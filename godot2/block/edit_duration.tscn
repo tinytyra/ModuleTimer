@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxjdm5aio75xf"]
+
+[ext_resource type="Theme" uid="uid://dkx8la5itsdg3" path="res://resources.tres/Theme_Light.tres" id="1_gk6wo"]
+[ext_resource type="Script" uid="uid://6oo8sgtstfr7" path="res://block/edit_duration.gd" id="2_0stdy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07jjg"]
+bg_color = Color(0.953041, 0.95304, 0.953041, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.364084, 0.364084, 0.364084, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.698039)
+shadow_size = 2
+anti_aliasing = false
+
+[node name="EditDuration" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_right = 234.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme = ExtResource("1_gk6wo")
+script = ExtResource("2_0stdy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gk6wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_07jjg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -20.0
+offset_right = 133.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gk6wo")
+alignment = 1
+
+[node name="SpinBoxHH" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../SpinBoxMM")
+focus_next = NodePath("../SpinBoxMM")
+focus_previous = NodePath("../Cancel_Button")
+focus_mode = 2
+theme = ExtResource("1_gk6wo")
+max_value = 60.0
+rounded = true
+alignment = 1
+suffix = "h"
+custom_arrow_step = 5.0
+select_all_on_focus = true
+
+[node name="SpinBoxMM" type="SpinBox" parent="HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+focus_neighbor_left = NodePath("../SpinBoxHH")
+focus_neighbor_right = NodePath("../SpinBoxSS")
+focus_next = NodePath("../SpinBoxSS")
+focus_previous = NodePath("../SpinBoxHH")
+focus_mode = 2
+theme = ExtResource("1_gk6wo")
+max_value = 60.0
+rounded = true
+alignment = 1
+suffix = "m"
+custom_arrow_step = 5.0
+select_all_on_focus = true
+
+[node name="SpinBoxSS" type="SpinBox" parent="HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+focus_neighbor_left = NodePath("../SpinBoxMM")
+focus_neighbor_right = NodePath("../OK_Button")
+focus_next = NodePath("../OK_Button")
+focus_previous = NodePath("../SpinBoxMM")
+focus_mode = 2
+theme = ExtResource("1_gk6wo")
+max_value = 60.0
+rounded = true
+alignment = 1
+suffix = "s"
+custom_arrow_step = 5.0
+select_all_on_focus = true
+
+[node name="OK_Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_neighbor_left = NodePath("../SpinBoxSS")
+focus_neighbor_right = NodePath("../Cancel_Button")
+focus_next = NodePath("../Cancel_Button")
+focus_previous = NodePath("../SpinBoxSS")
+theme = ExtResource("1_gk6wo")
+text = "✓"
+
+[node name="Cancel_Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_neighbor_left = NodePath("../OK_Button")
+focus_neighbor_right = NodePath("../SpinBoxHH")
+focus_next = NodePath("../SpinBoxHH")
+focus_previous = NodePath("../OK_Button")
+theme = ExtResource("1_gk6wo")
+text = "✕"
+
+[connection signal="value_changed" from="HBoxContainer/SpinBoxHH" to="." method="_on_hh_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/SpinBoxMM" to="." method="_on_mm_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/SpinBoxSS" to="." method="_on_ss_value_changed"]
+[connection signal="pressed" from="HBoxContainer/OK_Button" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Cancel_Button" to="." method="_on_cancel_button_pressed"]
