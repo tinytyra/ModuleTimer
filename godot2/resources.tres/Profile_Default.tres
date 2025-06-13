@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Profile" load_steps=2 format=3 uid="uid://bfdvucg07650j"]
-
-[ext_resource type="Script" uid="uid://clh2crykddrpq" path="res://app/profile_res.gd" id="1_wsoui"]
-
-[resource]
-script = ExtResource("1_wsoui")
-has_loops = Array[Resource]([])
-metadata/_custom_type_script = "uid://clh2crykddrpq"

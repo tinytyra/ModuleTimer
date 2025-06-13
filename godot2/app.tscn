@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://3nrvj3gjwl21"]
+[gd_scene load_steps=6 format=3 uid="uid://3nrvj3gjwl21"]
 
 [ext_resource type="Script" uid="uid://bngty06yfkdkj" path="res://app/app.gd" id="1_qbwvd"]
+[ext_resource type="Script" uid="uid://cccugbfcsd2sv" path="res://loop/loop-data_res.gd" id="2_d7sxu"]
 [ext_resource type="Script" uid="uid://clh2crykddrpq" path="res://app/profile_res.gd" id="2_i4801"]
-[ext_resource type="Theme" uid="uid://dkx8la5itsdg3" path="res://resources.tres/Theme_Light.tres" id="3_i4801"]
+[ext_resource type="Theme" uid="uid://dkx8la5itsdg3" path="res://resources/Theme_Light.tres" id="3_i4801"]
 
 [sub_resource type="Resource" id="Resource_h2yge"]
 script = ExtResource("2_i4801")
-has_loops = Array[Resource]([])
+has_loops = Array[ExtResource("2_d7sxu")]([])
 metadata/_custom_type_script = "uid://clh2crykddrpq"
 
 [node name="App" type="Node"]
