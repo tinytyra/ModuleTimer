@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5tbo4akrdw37"]
+
+[ext_resource type="Script" uid="uid://lcmclsjkee1e" path="res://block/block_func.gd" id="1_p2cip"]
+[ext_resource type="Script" uid="uid://xwyq3y5djy4m" path="res://block/block-data_res.gd" id="2_7vp4c"]
+[ext_resource type="StyleBox" uid="uid://cka1d13ti0cah" path="res://resources/StyleBoxFlat_Block.tres" id="3_07jjg"]
+[ext_resource type="Theme" uid="uid://dkx8la5itsdg3" path="res://resources/Theme_Light.tres" id="3_sj7r8"]
+[ext_resource type="FontFile" uid="uid://bcfglvhtkeqwo" path="res://addons/nunito/Nunito-Bold.ttf" id="5_7vp4c"]
+[ext_resource type="LabelSettings" uid="uid://cdgjcndjihuk6" path="res://resources/LabelSettings_Light_Block_Countdown.tres" id="5_o2knv"]
+
+[sub_resource type="Resource" id="Resource_mqn8r"]
+resource_local_to_scene = true
+script = ExtResource("2_7vp4c")
+saved_duration = []
+auto_proceed = false
+user_color = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://xwyq3y5djy4m"
+
+[node name="Block" type="Node"]
+script = ExtResource("1_p2cip")
+blockdata = SubResource("Resource_mqn8r")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -37.5
+offset_right = 60.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_sj7r8")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_sj7r8")
+theme_override_styles/panel = ExtResource("3_07jjg")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_7vp4c")
+text = "00:00:00"
+label_settings = ExtResource("5_o2knv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 2
+flat = true
+clip_text = true
+
+[connection signal="pressed" from="Control/EditButton" to="." method="_on_editbutton_pressed"]

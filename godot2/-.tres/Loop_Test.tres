@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Loop" load_steps=2 format=3 uid="uid://xpbapmvgvirj"]
-
-[ext_resource type="Script" uid="uid://cccugbfcsd2sv" path="res://loop/loop_res.gd" id="1_ep5ya"]
-
-[resource]
-script = ExtResource("1_ep5ya")
-has_blocks = Array[Resource]([])
-metadata/_custom_type_script = "uid://cccugbfcsd2sv"

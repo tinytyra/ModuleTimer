@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkx8la5itsdg3"]
+
+[ext_resource type="FontFile" uid="uid://cpem1hm7336nx" path="res://addons/nunito/Nunito-Regular.ttf" id="1_e0upj"]
+
+[resource]
+default_font = ExtResource("1_e0upj")
+default_font_size = 20
