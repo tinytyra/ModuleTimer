@@ -1,24 +1,29 @@
 extends Node
 
-@export var blockdata : Resource
+@export var blockdata : BlockData
+var readable_format = "%02d:%02d:%02d" # for converting [hh,mm,ss] to "hh:mm:ss"
+var hhmmss : String
 
-func _ready() -> void:
-	pass
 
-func _on_edit_button_pressed() -> void:
-	var edit_duration_popup = preload("res://block/edit_duration.tscn").instantiate()
-	add_child(edit_duration_popup)
-	get_node("EditDuration")
-	edit_duration_popup.saved_new_duration.connect(_on_saved_new_duration)
-	print("block_func ran _on_edit_button_pressed()")
-
-func _on_saved_new_duration(durationarray):
-	blockdata.set_hh(durationarray[0])
-	blockdata.set_mm(durationarray[1])
-	blockdata.set_ss(durationarray[2])
-	update_label()
-	print("block_func ran _on_saved_new_duration and has ",durationarray)
+func _on_editbutton_pressed() -> void:
+	# spawn EditDuration popup with input fields
+	var popup = preload("res://block/edit_duration.tscn").instantiate()
+	add_child(popup)
 	
-func update_label():
-	get_node("Control/Label").set_text(blockdata.hhmmss)
-	print("block_func ran update_label with ",blockdata.hhmmss)
+	# connect to signal new_user_duration(input_duration_array)
+	get_node("EditDuration")
+	popup.new_user_duration.connect(_on_new_user_duration)
+	
+	print("block_func.gd ----- _on_editbutton_pressed() ran")
+	
+
+func _on_new_user_duration(input_duration_array):
+	blockdata.set_saved_duration(input_duration_array)
+	update_label(input_duration_array)
+	print("block_func.gd ----- _on_new_user_duration() -> ",input_duration_array)
+
+
+func update_label(input_duration_array):
+	hhmmss = readable_format % input_duration_array # create readable string from array
+	get_node("Control/Label").set_text(hhmmss)
+	print("block_func.gd ----- update_label() -> ",hhmmss)

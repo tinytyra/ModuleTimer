@@ -60,7 +60,7 @@ alignment = 1
 layout_mode = 2
 focus_neighbor_right = NodePath("../SpinBoxMM")
 focus_next = NodePath("../SpinBoxMM")
-focus_previous = NodePath("../Cancel_Button")
+focus_previous = NodePath("../CancelBtn")
 focus_mode = 2
 theme = ExtResource("1_gk6wo")
 max_value = 60.0
@@ -90,8 +90,8 @@ select_all_on_focus = true
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 focus_neighbor_left = NodePath("../SpinBoxMM")
-focus_neighbor_right = NodePath("../OK_Button")
-focus_next = NodePath("../OK_Button")
+focus_neighbor_right = NodePath("../ConfirmButton")
+focus_next = NodePath("../ConfirmButton")
 focus_previous = NodePath("../SpinBoxMM")
 focus_mode = 2
 theme = ExtResource("1_gk6wo")
@@ -102,28 +102,28 @@ suffix = "s"
 custom_arrow_step = 5.0
 select_all_on_focus = true
 
-[node name="OK_Button" type="Button" parent="HBoxContainer"]
+[node name="ConfirmButton" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 focus_neighbor_left = NodePath("../SpinBoxSS")
-focus_neighbor_right = NodePath("../Cancel_Button")
-focus_next = NodePath("../Cancel_Button")
+focus_neighbor_right = NodePath("../CancelBtn")
+focus_next = NodePath("../CancelBtn")
 focus_previous = NodePath("../SpinBoxSS")
 theme = ExtResource("1_gk6wo")
 text = "✓"
 
-[node name="Cancel_Button" type="Button" parent="HBoxContainer"]
+[node name="CancelBtn" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-focus_neighbor_left = NodePath("../OK_Button")
+focus_neighbor_left = NodePath("../ConfirmButton")
 focus_neighbor_right = NodePath("../SpinBoxHH")
 focus_next = NodePath("../SpinBoxHH")
-focus_previous = NodePath("../OK_Button")
+focus_previous = NodePath("../ConfirmButton")
 theme = ExtResource("1_gk6wo")
 text = "✕"
 
-[connection signal="value_changed" from="HBoxContainer/SpinBoxHH" to="." method="_on_hh_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/SpinBoxMM" to="." method="_on_mm_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/SpinBoxSS" to="." method="_on_ss_value_changed"]
-[connection signal="pressed" from="HBoxContainer/OK_Button" to="." method="_on_ok_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/Cancel_Button" to="." method="_on_cancel_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/SpinBoxHH" to="." method="_on_hh_inputted"]
+[connection signal="value_changed" from="HBoxContainer/SpinBoxMM" to="." method="_on_mm_inputted"]
+[connection signal="value_changed" from="HBoxContainer/SpinBoxSS" to="." method="_on_ss_inputted"]
+[connection signal="pressed" from="HBoxContainer/ConfirmButton" to="." method="_on_confirmbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/CancelBtn" to="." method="_on_cancelbutton_pressed"]

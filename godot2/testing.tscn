@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://badf4ig80nxwq"]
+
+[ext_resource type="Script" uid="uid://cqot3h2evqa58" path="res://node.gd" id="1_qrja6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_qrja6")
+hh_input = 5.0
+mm_input = 66.32
+ss_input = 3.0

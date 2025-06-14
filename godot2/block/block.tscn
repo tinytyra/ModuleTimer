@@ -10,10 +10,7 @@
 [sub_resource type="Resource" id="Resource_mqn8r"]
 resource_local_to_scene = true
 script = ExtResource("2_7vp4c")
-hh = []
-mm = []
-ss = []
-hhmmss = null
+saved_duration = []
 auto_proceed = false
 user_color = Color(0, 0, 0, 1)
 metadata/_custom_type_script = "uid://xwyq3y5djy4m"
@@ -56,7 +53,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_7vp4c")
-text = "hh : mm : ss"
+text = "00:00:00"
 label_settings = ExtResource("5_o2knv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -72,4 +69,4 @@ button_mask = 2
 flat = true
 clip_text = true
 
-[connection signal="pressed" from="Control/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="Control/EditButton" to="." method="_on_editbutton_pressed"]
